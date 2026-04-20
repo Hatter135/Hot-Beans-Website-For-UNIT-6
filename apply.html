@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="BEANS Loop-1.mp4" type="video/mp4">
+</video>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h1>Become a Member</h1>
+        <nav>
+            <a href="index.html" id="nav-buttons">Home</a>
+            <a href="aboutus.html" id="nav-buttons">About Us</a>
+            <a href="apply.html", target="" id="nav-buttons" class="active"> Apply</a>
+        
+        </nav> 
+
+    </header>
+<div class="bigbox"> 
+    <div class="box1-apply">
+        
+    <p class="box1-text">Apply to be a member of our team!</p>
+            
+
+<div>Please fill in the details below:</div>
+
+<div id="success" style="display: none;">
+    <p>Submit successful</p>
+    <button onclick="closebox()">OK</button>
+</div>
+
+<label>Email</label>
+<input type="text" id="email" placeholder="Enter your email">
+
+<label>Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<textarea id="textbox" placeholder="Tell us about yourself!"></textarea>
+
+<button onclick="submitdet(event)">submit</button>
+
+</div>
+
+<script src="Script.js"></script>
+
+</body>
+</html>
