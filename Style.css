@@ -19,7 +19,7 @@ body, header, .bigbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: orange;
+    background-color: rgb(88, 43, 0);
     height: 75px;
     margin: 40px;
     border: 10px solid brown;
@@ -42,23 +42,47 @@ gap: 10px;
 
 
 #nav-buttons {
-    display: flex;
-    align-items: center;
-    color: brown;
-    text-decoration: none;
+    color: orange;
+    text-decoration: underline;
     font-size: 24px;
-    padding: 10px 20px;
+    font-weight: normal;
+    font-family: Calibri, sans-serif;
+    padding: 6px 12px;
+    -webkit-text-stroke: 0.3px white;
+    text-shadow: 2px 2px 4px black;
     transition: all 0.3s ease;
 }
 
 #nav-buttons:hover {
     font-weight: bold;
     transform: scale(1.5);
+    color: white;
 }
 
 #nav-buttons.active {
     font-weight: bold;
-    color: rgb(255, 0, 0);
+    color: orange;
+}
+
+.gear {
+    width: 36px;        
+    height: 36px;
+    fill: transparent;   
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.gear path {
+    fill: transparent;
+    stroke: orange;
+    stroke-width: 2px;
+}
+
+.gear:hover {
+    transform: rotate(720deg);
+    fill: white;       
 }
 
 body {
@@ -67,18 +91,27 @@ body {
 
 
 h1 {
-    color: brown;
+    color: orange;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: Calibri, sans-serif; 
     align-items: top;
+    margin: 0px;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 2px 2px 4px black;
 }
+
+/* home */
 
 .bigbox {
     display: flex;
     justify-content: space-between;
     border: 10px solid brown;
-    background-color: orange;
+    background-color: rgb(88, 43, 0);
     min-height: 300px;
     height: auto;
-    padding: 10px;
+    padding: 0px;
     margin: 40px;
 }
 
@@ -92,6 +125,59 @@ h1 {
     align-items: left;
     transition: all 0.3s ease;
 }
+
+/* about us */
+
+.bigbox-aboutus {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    min-height: 300px;
+    height: auto;
+    padding: 0px;
+    margin: 40px;
+}
+
+
+.about-box {
+    border: 10px solid brown;
+    background-color: rgb(88, 43, 0);
+    width: 350px;
+    height: 450px;
+    padding: 5px;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+.about-title {
+    color: orange;
+    font-size: 30px;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    margin: 10px;
+    -webkit-text-stroke: 1px white;
+}
+
+.about-body {
+    color: white;
+    font-size: 18px;
+    font-family: Calibri, sans-serif;
+    margin: 10px;
+}
+
+.about-box:hover {
+    transform: scale(1.05);
+    border-color: orange;
+}
+
+.our-work-img {
+    width: 10%;
+    height: auto;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+
+/* apply */
 
 .box1-apply {
     border: 10px solid brown;
@@ -121,7 +207,7 @@ h1 {
 
 #home-description {
     color: brown;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     margin-left: 20px;
     transition: all 0.3s ease;
