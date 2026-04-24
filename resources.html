@@ -14,16 +14,16 @@
 </video>
 
 <header class="navbar">
-    <h1>Become a Member
-        <span class="nav-subtitle">Join our team today!</span>
+    <h1>Resources
+        <span class="nav-subtitle">helpful information and materials</span>
     </h1>
 
     <div class="nav-right">
         <nav>
             <a href="index.html" class="nav-buttons">Home</a>
             <a href="aboutus.html" class="nav-buttons">About Us</a>
-            <a href="apply.html" class="nav-buttons-active"> Apply</a>
-            <a href="resources.html" class="nav-buttons"> Resources</a>
+            <a href="apply.html" class="nav-buttons"> Apply</a>
+            <a href="resources.html" class="nav-buttons-active"> Resources</a>
             <a href="ourteam.html" class="nav-buttons"> Our Team</a>
         
         </nav> 
@@ -34,47 +34,17 @@
     </svg>
 </header>
 
-<div class="bigbox">
-
-    <!-- BOX 1 -->
-    <div class="box1-apply">
-        <p class="box1-text">How to apply</p>
-
-        <p>
-            To apply, fill in the form next to this box with your name, email, and a short message about yourself.
-            We review every application carefully and get back to suitable candidates as soon as possible.
-        </p>
-
-        <p>
-            Make sure your details are correct and tell us why you want to join the team — keep it clear and simple.
-        </p>
+<div class="bigbox-resources">
+    <div class="resources-content">
+        <h2 id="resouces-title">Resources</h2>
+        <p>Welcome to our resources page! Here you can find helpful information and materials.</p>
+        <ul>
+            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools - Web Development Tutorials</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs - Comprehensive Web Development Reference</a></li>
+            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp - Learn to Code for Free</a></li>
+            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy - Interactive Coding Courses</a></li>
+        </ul>
     </div>
-
-    <!-- BOX 2 -->
-    <div class="box2-application">
-
-        <p class="box1-text">Apply to be a member of our team!</p>
-
-        <p>Please fill in the details below:</p>
-
-        <div id="success" style="display: none;">
-            <p>Submit successful</p>
-            <button onclick="closebox()">OK</button>
-        </div>
-
-        <label class="form-control">Email</label>
-        <input type="text" id="email" class="form-control" placeholder="Enter your email">
-
-        <label class="form-control">Name</label>
-        <input type="text" id="name" class="form-control" placeholder="Enter your name">
-
-        <label class="form-control">About You</label>
-        <textarea id="textbox" class="form-control" placeholder="Tell us about yourself!"></textarea>
-
-        <button onclick="submitdet(event)" class="form-control">submit</button>
-
-    </div>
-
 </div>
 
     <!-- overlay -->
