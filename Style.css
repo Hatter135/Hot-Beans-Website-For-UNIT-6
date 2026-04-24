@@ -171,7 +171,8 @@ h1 {
 }
 
 .our-work-img {
-    width: 10%;
+    width: 100%;
+    max-width: 110px;
     height: auto;
     border: 5px solid white;
     transition: all 0.3s ease;
