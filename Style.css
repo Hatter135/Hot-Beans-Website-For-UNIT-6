@@ -1,4 +1,37 @@
 
+:root {
+    --bg-1: brown;
+    --bg-2: orange;
+
+    --text-colour: brown;
+    --stroke-colour: black;
+
+    --text-stroke-width: 0.3px;
+
+    --font-main: Calibri, sans-serif;
+
+    --link-colour: brown;
+    --hover-colour: white;
+    --hover-bg-colour: orange;
+
+    --border-width: 5px;
+    --border-colour: black;
+    --thin-border-width: 1px;
+
+    --shadow: 2px 2px 4px black;
+}
+
+body.dark {
+    --bg-1: rgb(20, 20, 20);
+    --bg-2: rgb(40, 40, 40);
+
+    --text-colour: orange;
+    --border-colour: orange;
+
+    --hover-colour: white;
+}
+
+
 .bg-video {
     position: fixed;
     top: 0;
@@ -18,16 +51,27 @@ body, header, .bigbox {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: rgb(88, 43, 0);
+    position: sticky;
+    align-items: flex-start;
+    background-color: var(--bg-2);
     height: 75px;
-    margin: 40px;
-    border: 10px solid brown;
+    margin: 0 40px;
+    padding: 10px 20px;
+    border: var(--border-width) solid var(--border-colour);
 }
 
-nav {
+nav a {
+    display: inline-block;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.nav-right {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    height: 100px;
+
 }
 
 @media (max-width: 768px) {
@@ -41,27 +85,34 @@ gap: 10px;
 }}
 
 
-#nav-buttons {
-    color: orange;
-    text-decoration: underline;
-    font-size: 24px;
+.nav-buttons {
+    color: var(--text-colour);
+    font-size: 36px;
     font-weight: normal;
     font-family: Calibri, sans-serif;
-    padding: 6px 12px;
-    -webkit-text-stroke: 0.3px white;
-    text-shadow: 2px 2px 4px black;
+    padding: 6px 6px;
+    -webkit-text-stroke: 0.3px var(--stroke-colour);
+    text-shadow: 2px 2px 4px var(--shadow);
     transition: all 0.3s ease;
 }
 
-#nav-buttons:hover {
+.nav-buttons:hover, .nav-buttons-active:hover {
     font-weight: bold;
     transform: scale(1.5);
-    color: white;
+    color: var(--hover-colour);
 }
 
-#nav-buttons.active {
+.nav-buttons-active {
     font-weight: bold;
-    color: orange;
+    color: var(--text-colour);
+    text-decoration: underline;
+    font-size: 36px;
+    font-weight: normal;
+    font-family: Calibri, sans-serif;
+    padding: 6px 12px;
+    -webkit-text-stroke: 0.3px var(--stroke-colour);
+    text-shadow: 2px 2px 4px var(--shadow);
+    transition: all 0.3s ease;
 }
 
 .gear {
@@ -76,30 +127,126 @@ gap: 10px;
 
 .gear path {
     fill: transparent;
-    stroke: orange;
-    stroke-width: 2px;
+    stroke: var(--text-colour);
+    stroke-width: 1px;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
 }
 
 .gear:hover {
-    transform: rotate(720deg);
-    fill: white;       
+    transform: rotate(360deg);   
 }
 
+.gear:hover path{
+    stroke: var(--hover-colour);
+    stroke-width: 2px;
+}
+
+
 body {
-    background-color: rgb(88, 43, 0);
+    background-color: var(--bg-1);
 }
 
 
 h1 {
-    color: orange;
+    color: var(--text-colour);
     font-style: italic;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 48px;
     font-family: Calibri, sans-serif; 
     align-items: top;
     margin: 0px;
-    -webkit-text-stroke: 1px white;
-    text-shadow: 2px 2px 4px black;
+    margin-top: -10px;
+    -webkit-text-stroke: 1px var(--stroke-colour);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.nav-subtitle {
+    display: block;
+    color: var(--text-colour);
+    font-style: italic;
+    font-size: 26px;
+    font-weight: normal;
+    margin-left: 10px;
+    margin-top: -5px;
+    transition: all 0.3s ease;
+}
+
+.nav-subtitle:hover {
+    transform: rotate(360deg);
+}
+
+/* DIM BACKGROUND */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.6);
+    display: none;
+
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* SETTINGS BOX */
+.settings-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 350px;
+
+    background: var(--bg-2);
+    border-left: 5px solid var(--border-colour);
+
+    padding: 20px;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    z-index: 11;
+}
+
+/* when active */
+.settings-modal.active {
+    transform: translateX(0);
+}
+
+.themeSelect {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--border-colour);
+    border-radius: var(--border-width);
+    background-color: var(--bg-1);
+    color: var(--text-colour);
+    font-size: 16px;
+}
+
+.dropdown {
+    background-color: var(--bg-2);
+    color: var(--text-colour);
+    border: 1px solid var(--border-colour);
+}
+
+/* FORCES SETTINGS PAGE TEXT TO FOLLOW THEME */
+input,
+textarea,
+label {
+    color: var(--text-colour);
+    font-family: var(--font-main);
+}
+
+.settings-modal,
+.settings-modal * {
+    color: var(--text-colour);
 }
 
 /* home */
@@ -107,8 +254,8 @@ h1 {
 .bigbox {
     display: flex;
     justify-content: space-between;
-    border: 10px solid brown;
-    background-color: rgb(88, 43, 0);
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-1);
     min-height: 300px;
     height: auto;
     padding: 0px;
@@ -116,14 +263,61 @@ h1 {
 }
 
 .box1 {
-    border: 10px solid brown;
-    background-color: orange;
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-2);
     width: 600px;
     height: 400px;
     padding: 5px;
     margin: 20px;
     align-items: left;
     transition: all 0.3s ease;
+}
+
+#home-summary {
+    color: var(--text-colour);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+#home-description {
+    color: var(--text-colour);
+    font-size: 20px;
+    line-height: 1.5;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.box1:hover #home-summary,
+.box1:hover #home-description {
+    color: white;
+    transform: scale(1.05);
+}
+
+.box1:hover {
+    background-color:var(--stroke-colour); ;
+    border-color: var(--hover-bg-colour);
+    transform: scale(1.1);
+    margin-left: 30px;
+}
+
+.box2-img {
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-2);
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    margin: 20px;
+    align-items: right;
+    transition: all 0.3s ease;
+}
+
+.box2-img:hover {
+    background-color:var(--bg-1); ;
+    border-color: var(--hover-bg-colour);
+    transform: scale(1.1);
 }
 
 /* about us */
@@ -140,8 +334,8 @@ h1 {
 
 
 .about-box {
-    border: 10px solid brown;
-    background-color: rgb(88, 43, 0);
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-2);
     width: 350px;
     height: 450px;
     padding: 5px;
@@ -149,94 +343,101 @@ h1 {
     transition: all 0.3s ease;
 }
 
+.about-box:hover .about-title,
+.about-box:hover .about-body, 
+.about-box:hover .our-work-img {
+    color: var(--hover-colour);
+    transform: scale(1.05);
+}
+
 .about-title {
-    color: orange;
+    color: var(--text-colour);
     font-size: 30px;
-    font-family: Calibri, sans-serif;
+    font-family: var(--font-main);
     font-weight: bold;
     margin: 10px;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px var(--stroke-colour);
+    transition: all 0.3s ease;
 }
 
 .about-body {
-    color: white;
+    color: var(--text-colour);
     font-size: 18px;
-    font-family: Calibri, sans-serif;
+    font-family: var(--font-main);
     margin: 10px;
+    transition: all 0.3s ease;
 }
 
 .about-box:hover {
-    transform: scale(1.05);
-    border-color: orange;
+    transform: scale(1.1);
+    border-color: var(--hover-bg-colour);
+    background-color: var(--bg-1);
 }
 
 .our-work-img {
     width: 100%;
-    max-width: 110px;
+    max-width: 200px;
     height: auto;
-    border: 5px solid white;
+    border: var(--border-width) solid var(--border-colour);
     transition: all 0.3s ease;
 }
 
 /* apply */
 
 .box1-apply {
-    border: 10px solid brown;
-    background-color: orange;
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-2);
     width: 600px;
     height: 400px;
     padding: 5px;
     margin: 20px;
     align-items: left;
     transition: all 0.3s ease;
+    border-width: var(--border-width);
+    border-color: var(--border-colour);
 }
 
-.box1-apply .box1-text {
-    color: brown;
+.box1-apply,
+.box2-application {
+    color: var(--text-colour);
     font-size: 28px;
     font-weight: bold;
+
+    border: var(--border-width) solid var(--border-colour);
 }
 
-#home-summary {
-    color: brown;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    transition: all 0.3s ease;
+.box1-apply:hover{
+    background-color:var(--stroke-colour); ;
+    border-color: var(--hover-bg-colour);
+    transform: scale(1.25);
+    color: var(--hover-colour);
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
-#home-description {
-    color: brown;
-    font-size: 20px;
-    line-height: 1.5;
-    margin-left: 20px;
-    transition: all 0.3s ease;
+.box1-text:hover {
+    color: var(--hover-colour);
 }
 
-.box1:hover #home-summary,
-.box1:hover #home-description {
-    color: white;
-    transform: scale(1.05);
-}
-
-.box1:hover {
-    background-color:rgb(73, 48, 0) ;
-    transform: scale(1.1);
-}
-
-.box2-img {
-    border: 10px solid brown;
-    background-color: orange;
-    width: 400px;
-    height: 400px;
+.box2-application {
+    border: var(--border-width) solid var(--border-colour);
+    background-color: var(--bg-2);
+    width: 600px;
+    height: auto;
     padding: 5px;
     margin: 20px;
-    align-items: right;
+    align-items: left;
     transition: all 0.3s ease;
 }
 
-.box2-img:hover {
-    background-color:rgb(134, 88, 3) ;
-    transform: scale(1.1);
+.form-control {
+    display: flex;
+    align-items: space-between;
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-colour);
+    border-radius: var(--border-width);
+    transition: all 0.3s ease;
+    font-size: 18px;
 }

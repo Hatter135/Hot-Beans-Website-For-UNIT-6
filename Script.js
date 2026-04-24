@@ -69,3 +69,46 @@ emailjs.send(
 function closebox() {
     document.getElementById("success").style.display = "none";
 }
+
+
+function openSettings() {
+    document.getElementById("settingsModal").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeSettings() {
+    document.getElementById("settingsModal").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+
+// click outside to close
+document.getElementById("overlay").addEventListener("click", closeSettings);
+
+const themeSelect = document.getElementById("themeSelect");
+
+themeSelect.addEventListener("change", function () {
+    if (this.value === "dark") {
+        document.body.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+    }
+});
+
+window.addEventListener("load", () => {
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "dark") {
+        document.body.classList.add("dark");
+        document.getElementById("themeSelect").value = "dark";
+    }
+});
+
+// on page load, check local storage for theme
+window.addEventListener("load", function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
+});
