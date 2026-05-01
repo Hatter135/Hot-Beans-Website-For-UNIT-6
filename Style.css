@@ -77,13 +77,16 @@ nav a {
 
 @media (max-width: 768px) {
 
-.navbar { 
+    .navbar { 
 
-flex-direction: column; 
+    flex-direction: column; 
 
-gap: 10px; 
+    gap: 10px; 
 
-}}
+}
+
+
+}
 
 
 .nav-buttons {
@@ -437,9 +440,9 @@ label {
 .box1-apply:hover{
     background-color:var(--stroke-colour); ;
     border-color: var(--hover-bg-colour);
-    transform: scale(1.25);
+    transform: scale(1.1);
     color: var(--hover-colour);
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 50px;
 }
 
@@ -458,18 +461,35 @@ label {
     transition: all 0.3s ease;
 }
 
+.box2-application:hover{
+    background-color:var(--stroke-colour); ;
+    border-color: var(--hover-bg-colour);
+    transform: scale(1.05);
+    color: var(--hover-colour);
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
 .form-control {
     display: flex;
     align-items: space-between;
-    width: 95%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
+    margin-left: 20px;
     border: 1px solid var(--border-colour);
     border-radius: var(--border-width);
     transition: all 0.3s ease;
     font-size: 18px;
 }
 
+.box2-application:hover, .box2-application:hover .form-control {
+    background-color:var(--stroke-colour); ;
+    border-color: var(--hover-bg-colour);
+    transform: scale(1.05);
+    color: var(--hover-colour);
+    margin-top: 10px;
+}
 
 /* resources */
 
