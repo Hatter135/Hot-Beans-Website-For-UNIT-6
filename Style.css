@@ -1,4 +1,8 @@
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --bg-1: brown;
     --bg-2: orange;
@@ -55,7 +59,8 @@ body, header, .bigbox {
     position: sticky;
     align-items: flex-start;
     background-color: var(--bg-2);
-    height: 75px;
+    min-height: 75px;
+    height: auto;
     margin: 0 40px;
     padding: 10px 20px;
     border: var(--border-width) solid var(--border-colour);
@@ -77,14 +82,52 @@ nav a {
 
 @media (max-width: 768px) {
 
-    .navbar { 
-
-    flex-direction: column; 
-
-    gap: 10px; 
-
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        min-height: 75px;
+        height: auto;
 }
 
+    .bigbox, .bigbox-aboutus, .bigbox-resources {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+        gap: 20px;
+}
+
+    .box1-apply,
+    .box2-application {
+        width: 95%;
+        max-width: 100%;
+        margin: 0;
+}
+
+    .nav-right {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+}
+        .bigbox-ourteam {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            margin: 20px 0;
+            padding: 10px;
+            gap: 10px;
+}
+        .team-member-box {
+            width: 95%;
+            max-width: 100%;
+            margin: 0;
+}
 
 }
 
@@ -205,7 +248,7 @@ h1 {
     right: 0;
 
     height: 100%;
-    width: 350px;
+    width: 25%;
 
     background: var(--bg-2);
     border-left: 5px solid var(--border-colour);
@@ -213,7 +256,7 @@ h1 {
     padding: 20px;
 
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
 
     z-index: 11;
 }
@@ -269,8 +312,10 @@ label {
 .box1 {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 600px;
-    height: 400px;
+    width: 90%;
+    max-width: 600px;
+    min-height: 400px;
+    height: auto;
     padding: 5px;
     margin: 20px;
     align-items: left;
@@ -310,8 +355,10 @@ label {
 .box2-img {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    width: 90%;
+    max-height: 400px;
+    height: auto;
     padding: 5px;
     margin: 20px;
     align-items: right;
@@ -340,8 +387,10 @@ label {
 .about-box {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 350px;
-    height: 450px;
+    max-width: 350px;
+    width: 90%;
+    min-height: 450px;
+    height: auto;
     padding: 5px;
     margin: 20px;
     transition: all 0.3s ease;
@@ -418,8 +467,10 @@ label {
 .box1-apply {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 600px;
-    height: 400px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 400px;
+    height: auto;
     padding: 5px;
     margin: 20px;
     align-items: left;
@@ -431,7 +482,7 @@ label {
 .box1-apply,
 .box2-application {
     color: var(--text-colour);
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 
     border: var(--border-width) solid var(--border-colour);
@@ -442,7 +493,6 @@ label {
     border-color: var(--hover-bg-colour);
     transform: scale(1.1);
     color: var(--hover-colour);
-    margin-left: 50px;
     margin-top: 50px;
 }
 
@@ -453,7 +503,9 @@ label {
 .box2-application {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 600px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 600px;
     height: auto;
     padding: 5px;
     margin: 20px;
@@ -466,7 +518,6 @@ label {
     border-color: var(--hover-bg-colour);
     transform: scale(1.05);
     color: var(--hover-colour);
-    margin-left: 60px;
     margin-top: 10px;
 }
 
@@ -474,13 +525,14 @@ label {
     display: flex;
     align-items: space-between;
     width: 90%;
+    height: auto;
     padding: 10px;
     margin: 10px 0;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 1px solid var(--border-colour);
     border-radius: var(--border-width);
     transition: all 0.3s ease;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .box2-application:hover, .box2-application:hover .form-control {
@@ -534,8 +586,10 @@ label {
 .team-member-box {
     border: var(--border-width) solid var(--border-colour);
     background-color: var(--bg-2);
-    width: 300px;
-    height: 450px;
+    max-width: 300px;
+    width: 90%;
+    max-height: 450px;
+    height: auto;
     padding: 5px;
     margin: 20px;
     transition: all 0.3s ease;
