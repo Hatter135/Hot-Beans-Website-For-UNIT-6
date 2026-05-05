@@ -3,6 +3,7 @@ function Submitdets(event) {
 
     const fullname = document.getElementById("name").value;
     const email = document.getElementById("email").value;
+    const message = document.getElementById("textbox").value;
 
     if (fullname === "") {
         alert("Please enter your name!");
@@ -11,6 +12,11 @@ function Submitdets(event) {
 
     if (email === "") {
         alert("Please enter an email address");
+        return;
+    }
+
+    if (message === "") {
+        alert("Please enter a message");
         return;
     }
 
@@ -34,32 +40,39 @@ function closeModal() {
 function submitdet(event) {
     event.preventDefault();
 
-const emailinput = document.getElementById("email").value;
-const nameinput = document.getElementById("name").value;
+    const emailinput = document.getElementById("email").value;
+    const nameinput = document.getElementById("name").value;
+    const message = document.getElementById("textbox").value;
 
-if (nameinput === "") {
-    alert("Please enter a name")
-    return
-}
+    if (nameinput === "") {
+        alert("Please enter a name")
+        return
+    }
 
-if (emailinput === "") {
-    alert("Please enter an email")
-    return
-}
+    if (emailinput === "") {
+        alert("Please enter an email")
+        return
+    }
 
-document.getElementById("success").style.display = "flex";
+    if (message === "") {
+        alert("Please enter a message");
+        return;
+    }
 
 
-emailjs.init({ publicKey: "2v4jOAS-wRLqTXcwD" }); 
+    document.getElementById("success").style.display = "flex";
 
-emailjs.send(
-  "service_q9mff4h",
-  "template_7wryggv",
-  { 
-    from_name:  document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
-    message:    document.getElementById("textbox").value
-  }
+
+    emailjs.init({ publicKey: "2v4jOAS-wRLqTXcwD" }); 
+
+        emailjs.send(
+        "service_q9mff4h",
+        "template_7wryggv",
+    { 
+            from_name:  document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            message:    document.getElementById("textbox").value
+    }
 );
 
 

@@ -4,6 +4,7 @@
 
     --text-colour: brown;
     --stroke-colour: black;
+    --input-text-colour: black;
 
     --text-stroke-width: 0.5px;
 
@@ -283,7 +284,9 @@ h1 {
 
 /* FORCES SETTINGS PAGE TEXT TO FOLLOW THEME */
 input,
-textarea,
+textarea {
+    color: var(--input-text-colour);
+}
 label {
     color: var(--text-colour);
     font-family: var(--font-main);
@@ -491,7 +494,8 @@ label {
     border-color: var(--hover-bg-colour);
     transform: scale(1.1);
     color: var(--hover-colour);
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-left: 50px;
 }
 
 .box1-text:hover {
