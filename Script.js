@@ -20,18 +20,7 @@ function Submitdets(event) {
         return;
     }
 
-    // hide the main content
-    document.querySelector(".bigbox").style.display = "flex";
-
-    // show the modal
-    document.getElementById("success").style.display = "flex";
 }
-
-function closeModal() {
-    document.getElementById("success").style.display = "none";
-    document.querySelector(".bigbox").style.display = "flex";
-}
-
 
 
 
@@ -60,7 +49,7 @@ function submitdet(event) {
     }
 
 
-    document.getElementById("success").style.display = "flex";
+
 
 
     emailjs.init({ publicKey: "2v4jOAS-wRLqTXcwD" }); 
@@ -75,14 +64,9 @@ function submitdet(event) {
     }
 );
 
-
+    window.alert("Details accepted! Click OK to send your application.");
 
 }
-
-function closebox() {
-    document.getElementById("success").style.display = "none";
-}
-
 
 function openSettings() {
     document.getElementById("settingsModal").classList.add("active");
