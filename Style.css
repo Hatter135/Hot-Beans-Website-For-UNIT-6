@@ -21,6 +21,12 @@
     --shadow: 2px 2px 4px black;
 }
 
+a {
+    color: var(--text-colour);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
 body.dark {
     --bg-1: rgb(20, 20, 20);
     --bg-2: rgb(40, 40, 40);
@@ -185,6 +191,14 @@ nav a {
 .gear:hover path{
     stroke: var(--hover-colour);
     stroke-width: 2px;
+}
+
+.small-logo {
+    width: 100px;
+    height: auto;
+    fill: transparent;
+    transition: transform 0.4s ease;
+    margin-right: 4px;
 }
 
 
